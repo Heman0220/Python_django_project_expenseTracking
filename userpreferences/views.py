@@ -7,6 +7,7 @@ from django.conf import settings
 from numpy import save
 from .models import Userpreferences,User
 from django.views.decorators.csrf import csrf_protect
+import numpy
 # Create your views here.
 
 @csrf_protect
