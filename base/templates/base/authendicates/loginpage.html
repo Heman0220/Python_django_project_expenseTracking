@@ -1,0 +1,37 @@
+{% extends 'base/authendicates/main_auth.html' %}
+{% load static %}
+{% block content%}
+
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <div class="card mt-5">
+            <div class="card-body">
+                <div class="card-title py-3">
+                    <h4>LOGIN NOW</h4>
+                </div>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group py-1">
+                        <input type="text" name="username" id="" placeholder="username" class="form-control form-control-sm"/>
+                    </div>
+
+                    <div class="form-group py-1">
+                         <input type="password" name="password" id="" placeholder="password" class="form-control form-control-sm"/>
+                    </div>
+
+                    <input type="submit" value="Login" class="btn btn-block btn-primary"/> 
+                   <a href="{% url 'signup' %}" <small>yet to signup?</small> 
+                </form>
+            </div>
+        </div>
+        {%if messages%}
+      {%for i in messages%}
+      <h1>{{i}}</h1>
+      {%endfor%}
+  {%endif%} 
+    </div>
+    <div class="col-md-6"></div>
+</div>
+
+{%endblock%}

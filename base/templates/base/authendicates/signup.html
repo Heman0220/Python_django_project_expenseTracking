@@ -1,0 +1,48 @@
+{% extends 'base/authendicates/main_auth.html' %}
+{% load static %}
+{% block content%}
+
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <div class="card mt-5">
+            <div class="card-body">
+                <div class="card-title py-3">
+                    <h4>Register</h4>
+                </div>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group py-1">
+                        <input type="text" name="username" id="username" placeholder="username" class="form-control form-control-sm"/>
+                    </div>
+
+                    <div class="form-group py-1">
+                         <input type="password" name="password" id="password" placeholder="password" class="form-control form-control-sm"/>
+                    </div>
+                    
+                    <div class="form-group py-1">
+                         <input type="password" name="password2" id="confirm_password" placeholder="Confirm password" class="form-control form-control-sm"/>
+                    </div>
+
+                    <div class="form-group py-1">
+                        <input type="email" name="email" id="email" placeholder="mail" class="form-control form-control-sm"/>
+                    </div>
+                    <input type="submit" value="Register" class="btn btn-block btn-primary" />
+                    
+                    <a href="{% url 'loginpage' %}" > Login? </a>
+                </form>
+                
+            </div>
+        </div>
+        {%if messages%}
+        {%for i in messages%}
+        <div >
+            <h1>error: {{i}}</h1>
+        </div>
+        {%endfor%}
+        {%endif%} 
+  
+    </div>
+    <div class="col-md-6"></div>
+</div>
+{%endblock%}

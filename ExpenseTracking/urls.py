@@ -24,4 +24,6 @@ urlpatterns = [
     path('',include('base.urls')),
 
     path('authendicate/',include('authendicate.urls')),
+
+    path('userpreferences/',include('userpreferences.urls')),
 ]

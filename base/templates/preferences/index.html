@@ -1,0 +1,26 @@
+{% extends 'base/home.html'%}
+{% load static%}
+{% block content%}
+
+<div class="container" mt-3>
+    <form action="{% url 'preferences' %}" method="post">
+        {%csrf_token%}
+    <div class="input-group">
+        <select name='currency' id='currency' class="custom-select" id="inputGroupSelect04">
+
+            {%if user_pref.currency%}
+            <h1>inside if</h1>
+            <option selected>{{user_pref.currency}}</option>
+            {%endif%}
+            <option selected>Choose...</option>
+            {% for i in currency_data%}
+            <option selected value="{{i.name}}-{{i.value}}">{{i.name}}-{{i.value}}</option>
+            {%endfor%}
+        </select>
+        <div class="input-group-append">
+            <input class="btn btn-outline-secondary" type="submit" value="Save">
+        </div>
+    </div>
+    </form>
+</div>
+{%endblock%}
