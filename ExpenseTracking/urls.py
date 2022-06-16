@@ -25,5 +25,5 @@ urlpatterns = [
 
     path('authendicate/',include('authendicate.urls')),
 
-    path('userpreferences/',include('userpreferences.urls')),
+   # path('userpreferences/',include('userpreferences.urls')),
 ]
